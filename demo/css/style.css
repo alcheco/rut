@@ -1,0 +1,42 @@
+html,body {
+	padding: 0;
+	margin: 0;
+	height: 100%;
+	font-family: tahoma !important;
+}
+body {
+	background-color: #95a5a6;
+}
+.input {
+	display:flex;
+	align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+.input>.inputContainer>input[type="text"] {
+	width: 15em;
+	border:0;
+	font-size: 3em;
+	box-shadow: 1px 1px 13px black;
+	color: #FFF;
+	background-color: #2c3e50;
+	outline: none;
+	font-family: tahoma !important;
+}
+.input>input[type="text"]:focus {
+	border: 0;
+}
+#revisar{
+	width: 15em;
+	border:0;
+	font-size: 3em;
+	box-shadow: 1px 1px 13px black;
+	color: #FFF;
+	background-color: #A52A46;
+	outline: none;
+	font-family: tahoma !important;
+	cursor: pointer;
+}
+#revisar:hover{
+	background-color: #811e35;
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<link rel="stylesheet" href="css/style.css" />
+	<!--<script src="external/jquery-1.11.3.min.js"></script>-->
+	<script src="../src/rut.js"></script>
+</head>
+<body>
+	<div class="input">
+		<div class="inputContainer">
+			<input type="text" id="rut" placeholder="RUT" />
+			<input type="text" id="dv" placeholder="VALIDATOR" /><br />
+			<p>
+			<label>
+				<input type="checkbox" id="external_dv" checked /> EXTERNAL INPUT VALIDATOR
+			</label>
+			<label>
+				<input type="checkbox" id="validate" checked /> VALIDAR
+			</label>
+			</p>
+			<br />
+			<button id="revisar">CHECK IT HERE!</button>
+			<h3 id="response"></h3>
+		</div>
+	</div>
+	<script>
+		var triggerButton = document.getElementById('revisar');
+		triggerButton.addEventListener('click', function() {
+			var ext_dv=document.getElementById("external_dv").checked;
+			var validate_data=document.getElementById("validate").checked;
+			var rut_value= document.getElementById('rut');
+			var rut= new Rut({
+				"data":{
+					"rut" : rut_value
+				},
+				"options":{
+					"external_dv" : ext_dv,
+					"id_dv" : "dv",
+					"validate" : validate_data,
+				}
+			});
+			res= JSON.parse(rut.format());
+			document.getElementById('response').innerHTML=res.msg;
+		});
+	</script>
+</body>
+</html>
