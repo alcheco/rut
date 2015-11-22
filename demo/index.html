@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 	<meta charset="UTF-8" />
-	<title>Document</title>
+	<title>Validador de RUT</title>
 	<link rel="stylesheet" href="css/style.css" />
 	<!--<script src="external/jquery-1.11.3.min.js"></script>-->
 	<script src="../src/rut.js"></script>
@@ -10,19 +10,19 @@
 <body>
 	<div class="input">
 		<div class="inputContainer">
-			<h1 class="text-center" >RUT VALIDATOR</h1>
+			<h1 class="text-center" >VALIDADOR DE RUT</h1>
 			<input type="text" id="rut" placeholder="RUT" />
-			<input type="text" id="dv" placeholder="VALIDATOR" /><br />
+			<input type="text" id="dv" placeholder="DÍGITO VERIFICADOR" /><br />
 			<p>
 			<label class="checkbox">
-				<input type="checkbox" id="external_dv" checked /> EXTERNAL INPUT VALIDATOR
+				<input type="checkbox" id="external_dv" checked /> DÍGITO VERIFICADOR EXTERNO
 			</label>
 			<label class="checkbox">
 				<input type="checkbox" id="validate" checked /> VALIDAR
 			</label>
 			</p>
 			<br />
-			<button id="revisar">VALIDATE IT!</button>
+			<button id="revisar">VALIDAR!</button>
 			<h3 id="response"></h3>
 		</div>
 	</div>
