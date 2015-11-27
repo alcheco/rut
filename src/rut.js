@@ -18,8 +18,7 @@
 		if(this.options.external_dv != false){
 			var dv=document.getElementById(this.options.id_dv).value;
 			var rut=val;
-		}
-		else{
+		}else{
 			var digits = val.split("-");
 			if(digits.length>1){
 				var rut = digits[0].split('.').join("");
@@ -61,8 +60,7 @@
 				//console.log("RUT con formato correcto, pero sin validación.");
 					return JSON.stringify({"res" : true, "msg" : "RUT con formato correcto, pero sin validación."});
 			}
-		}
-		else{
+		}else{
 			//console.log("RUT con formato incorrecto.");
 			return JSON.stringify({"res" : false, "msg" : "RUT con formato incorrecto."});
 		}
