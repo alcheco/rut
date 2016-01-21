@@ -20,6 +20,10 @@
 		{
 			return jQuery.rut.validar(res);
 		}
+		else
+		{
+			return jQuery.rut.formato(res);
+		}
 	}
 })(jQuery);
 	
@@ -41,9 +45,8 @@ jQuery.rut = {
 	},
 	validar: function(data){
 		var sum = 0;
-		var regRut = new RegExp(/^\d{3,}$/);
-		var regVer = new RegExp(/^[\dkK]$/);
-		if(regRut.exec(data.rut) && regVer.exec(data.dv)){
+		formatter=jQuery.rut.formato(data);
+		if(formatter.res){
 				var rA = data.rut.split('');
 				var c = rA.length-1;
 				for(x = c ; x>=0 ; x--){
@@ -65,6 +68,17 @@ jQuery.rut = {
 					//console.log("RUT no concuerda con digito verificador.");
 					return JSON.stringify({"res" : false, "msg" : "RUT no concuerda con digito verificador."});
 				}
+		}else{
+			//console.log("RUT con formato incorrecto.");
+			return JSON.stringify({"res" : false, "msg" : "RUT con formato incorrecto."});
+		}
+	},
+	formato: function(data){
+		var regRut = new RegExp(/^\d{3,}$/);
+		var regVer = new RegExp(/^[\dkK]$/);
+		if(regRut.exec(data.rut) && regVer.exec(data.dv)){
+			//console.log("RUT con formato correcto.");
+			return JSON.stringify({"res" : true, "msg" : "RUT con formato correcto."});
 		}else{
 			//console.log("RUT con formato incorrecto.");
 			return JSON.stringify({"res" : false, "msg" : "RUT con formato incorrecto."});
